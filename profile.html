@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+     -->
+    <style>
+
+        body{
+        background: #649173;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+         
+        }
+        .dm{
+             text-align: center; 
+        }
+            </style>  
+</head>
+
+<body>
+    <nav class="navbar  navbar-light transparent">
+        
+        
+            <div class="sp-btn">
+                 
+                <a href="#" class="btn btn-outline-dark w3-hover-text-green">Profile</a>
+                <a href="./login.html" class="btn btn-outline-dark w3-hover-text-green">Logout</a>
+            </div>
+                
+            
+        </nav>
+    <br>
+    <br>
+    <h3 class="dm">Profile</h3>
+    <br>
+    <table class="table table-striped mt-5" id="table">
+        <thead>
+<tr>
+   <th>Name :</th>
+   <td id="name"></td>
+   </tr>
+   <tr>
+   <th>City :</th>
+   <td id="mcity"></td>
+   </tr>  
+   <tr>
+   <th>CLG :</th>
+   <td id="mcollege"></td>
+</tr>
+<tr>
+    <th>
+        Email :
+    </th>
+    <td id="memail"></td>
+</tr>
+<tr>
+
+    <th>Job Profile:</th>
+    <td id="mjobprofile">
+    
+</td>
+</tr>
+<!-- <tr> <th>Salary :</th>
+<td id="salary"></td>
+</tr> -->
+</div>
+
+</tr>
+        </thead>
+        <tbody id="datalist"></tbody>
+    </table>
+    </table>
+
+    <div> 
+        <!-- <button type="button" class="btn btn-info btn-lg">login</button> 
+        
+        <button type="button" class="btn btn-outline-success btn-lg">Create</button>
+        </div> -->
+        <!--Modal: Login / Register Form-->
+        <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog cascading-modal" role="document">
+              <!--Content-->
+              <div class="modal-content">
+          
+                <!--Modal cascading tabs-->
+                <div class="modal-c-tabs">
+          
+                  <!-- Nav tabs -->
+                   <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                
+                    <li class="nav-item">
+                      <a class="nav-link"  data-toggle="tab" href="#panel8" onclick="getValue();"role="tab"><i class="fas fa-user-plus mr-1"></i>
+                       Sure you want to Edit</a>
+                    </li>
+                  </ul> 
+                  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" href="#panel18">Sure you want to edit</button>
+           -->
+    
+                  <div class="tab-content">
+        
+          
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+          
+                      <!--Body-->
+                      <div class="modal-body">
+                        <div class="md-form form-sm mb-5">
+                          <i class="fas fa-envelope prefix"></i> Email id :
+                          <input type="email" id="email" placeholder="enter your email" class="col-sm-8 " class="form-control form-control-sm validate" required>
+                          <label data-error="wrong" data-success="right" for="modalLRInput12"></label>
+                         <p font style="color:red;" id="alert1"></p> 
+                        </div>
+          
+                        <div class="md-form form-sm mb-5">
+                          <i class="fas fa-lock prefix"></i> Password :
+                          <input type="password" id="password" placeholder="password" class="col-sm-8 "  class="form-control form-control-sm validate" required>
+                          <label data-error="wrong" data-success="right" for="modalLRInput13"></label>
+                           <p style="color:red;" id="alert2"></p> 
+                        </div>
+                        <div class="md-form form-sm mb-5">
+                            <i class="fas fa-lock prefix"></i> F_Name : 
+                            <input type="text" id="uname" placeholder="Enter your Name" class="col-sm-8" class="form-control form-control-sm validate" required>
+                            <label data-error="wrong" data-success="right" for="modalLRInput14"></label>
+                             <p style="color:red;" i d="alert3"></p> 
+                          </div>
+                          <div class="md-form form-sm mb-5">
+                            <i class="fas fa-lock prefix"></i> CityName    : 
+                            <input type="text" id="city" placeholder="Enter your City" class="col-sm-8 " class="form-control form-control-sm validate" required>
+                            <label data-error="wrong" data-success="right" for="modalLRInput14"></label>
+                          </div>
+                        <div class="md-form form-sm mb-4">
+                          <i class="fas fa-lock prefix"></i> Qualification: 
+                          <input type="text" id="college" placeholder="College Name" class="col-sm-7" class="form-control form-control-sm validate" required>
+                          <label data-error="wrong" data-success="right" for="modalLRInput14"></label>
+                         </div>
+                          <div class="md-form form-sm mb-4">
+                          <!-- <i class="fas fa-lock prefix"></i> JobProfile  : 
+                          <input type="text" id="jobprofile" placeholder="Job Profile" class="col-sm-8 " class="form-control form-control-sm validate" required>
+                          <label data-error="wrong" data-success="right" for="modalLRInput14"></label>
+                        </div> -->Job_Profile  :
+                           <select id="jobprofile" name="" class="form-select dropdown-toggle" >
+                            <option value="Frontend">Frontend</option>
+                            <option value="Backend">Backend</option>
+                            <option value="FullStack">Full-Stack</option>
+                        </select>
+                          </div>
+                       <!--  <div class="md-form form-sm mb-4">
+                          <i class="fas fa-lock prefix"></i> Salary  : 
+                          <input type="text" id="salary" placeholder="Salary" class="col-sm-8 " class="form-control form-control-sm validate" required>
+                          <label data-error="wrong" data-success="right" for="modalLRInput14"></label>
+                         </div> -->
+                    
+                        <div class="text-center form-sm mt-2">
+                          <button class="btn btn-info" onclick=" event.preventDefault(); edit()" id="databt">Save changes <i class="fas fa-sign-in ml-1"></i></button>
+                        
+                        </div>
+                        
+                      </div>
+                      <!--Footer-->
+                      <div class="modal-footer">
+                        <!-- <div class="options text-right">
+                          <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                        </div> -->
+                        <button type="button" class="class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    <!--/.Panel 8-->
+                  </div>
+          
+                </div>
+              </div>
+              <!--/.Content-->
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <!-- <a href="" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalLRForm">Edit</a> -->
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalLRForm">edit</button>
+            <button type="button" class="btn btn-info btn-lg" onclick="deleteUser(); window.location.href = 'login.html';" data-dismiss="modal">delete</button>
+          </div>
+        </div>
+        
+        </div>
+        
+
+        <!-- footer -->
+        <footer class="w3-center  w3-padding-64">
+          
+          <!-- <div class="w3-xlarge w3-section">
+            <a href="https://www.facebook.com/" i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+            <a href="https://www.instagram.com/" i class="fa fa-instagram w3-hover-opacity"></i></a>
+            <a href="https://in.pinterest.com/" i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+            <a href="https://twitter.com/" i class="fa fa-twitter w3-hover-opacity" ></i></a>
+            <a href="https://www.linkedin.com/" i class="fa fa-linkedin w3-hover-opacity"></i></a>
+          </div> -->
+          
+          <p>Go To <a href="https://www.linkedin.com/in/vijay-tripathi-30b3611ab" title="W3.CSS" target="_blank" class="w3-hover-text-green"style="color:blue;">Linkedin</a></p>
+        </footer>
+
+       <script>
+        //store and edit 
+  var email = localStorage.getItem("email");
+  document.getElementById('memail').innerHTML=email;
+  var uname = localStorage.getItem('uname');
+  document.getElementById('name').innerHTML = uname;
+  var city = localStorage.getItem('city');
+  document.getElementById('mcity').innerHTML = city;
+  var college = localStorage.getItem('college');
+  document.getElementById('mcollege').innerHTML =college;
+  var jobprofile = localStorage.getItem('jobprofile');
+  document.getElementById('mjobprofile').innerHTML =jobprofile;
+
+
+  </script> 
+       
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="register.js"></script>    
+</body>
+
+</html>

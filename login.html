@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+    
+.form {
+    text-align: center;
+     max-width: 500px;
+    margin: auto;
+    
+    vertical-align: middle 
+}
+</style>
+
+</head>
+<body style="background-color:grey;">
+    <section>
+    <div class ="form">
+
+<div><br>
+    <br>
+    <br>
+    <br>
+    <h2>Login To Tntra</h2><br>
+</div>
+  <div> 
+<!-- <button type="button" class="btn btn-info btn-lg">login</button> 
+
+<button type="button" class="btn btn-outline-success btn-lg">Create</button>
+</div> -->
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+      <!--Content-->
+      <div class="modal-content">
+  
+        <!--Modal cascading tabs-->
+        <div class="modal-c-tabs">
+  
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                Register</a>
+            </li>
+          </ul>
+  
+          <!-- Tab panels -->
+          <div class="tab-content">
+            <!--Panel 7-->
+            <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+              <br>
+             <p  style="color:red;" id="alert1"></p>
+  
+              <!--Body-->
+              <div class="modal-body mb-1">
+                <div class="md-form form-sm mb-5">
+                  <i class="fas fa-envelope prefix"></i> 
+                  <input type="email" id="emailLogin" placeholder="Enter your email" class="form-control form-control-sm validate" required>
+                  <label data-error="wrong" data-success="right" for="emailLogin">Email id </label>
+                  
+                </div>
+  
+                <div class="md-form form-sm mb-4">
+                  <i class="fas fa-lock prefix"></i> 
+                  <input type="password" placeholder="password" id="passwordLogin" class="form-control form-control-sm validate" required>
+                  <label data-error="wrong" data-success="right" for="passwordLogin">Password </label>
+                
+                </div>
+                <div class="text-center mt-2">
+                  <button class="btn btn-info" id="dataln" onclick=" event.preventDefault(); loginUser()">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                </div>
+              </div>
+              <!--Footer-->
+              <div class="modal-footer">
+                
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+              </div>
+  
+            </div>
+            <!--/.Panel 7-->
+  
+            <!--Panel 8-->
+            <div class="tab-pane fade" id="panel8" role="tabpanel">
+  
+              <!--Body-->
+              <div class="modal-body">
+                <div class="md-form form-sm mb-5">
+                  <p  style="color:red;" id="error1234"> </p>
+                  <i class="fas fa-envelope prefix"></i> Email id :
+                  <input type="email" id="email"  placeholder="enter your email" class="col-sm-8 " class="form-control form-control-sm validate" required>
+                  <label data-error="wrong" data-success="right" for="email"></label>
+                  
+                </div>
+  
+                <div class="md-form form-sm mb-5">
+                  <p style="color:red;" id="alert2"></p>
+                  <i class="fas fa-lock prefix"></i> Password :
+                  <input type="password" id="password" placeholder="password" class="col-sm-8 "  class="form-control form-control-sm validate" required>
+                  <label data-error="wrong" data-success="right" for="password"></label>
+                  
+                </div>
+                <div class="md-form form-sm mb-5">
+                  <p style="color:red;" id="alert3"></p>
+                    <i class="fas fa-lock prefix"></i> F_Name : 
+                    <input type="text" id="uname" placeholder="Enter your Name" class="col-sm-8" class="form-control form-control-sm validate" required>
+                    <label data-error="wrong" data-success="right" for="uname"></label>
+                    
+                  </div>
+                 
+  
+                <div class="text-center form-sm mt-2">
+                  <button class="btn btn-info" onclick =" event.preventDefault(); store() "  id="databtn">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                </div>
+  
+              </div>
+              <!--Footer-->
+              <div class="modal-footer">
+                <!-- <div class="options text-right">
+                  <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                </div> -->
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!--/.Panel 8-->
+          </div>
+  
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!--Modal: Login / Register Form-->
+  
+  <div class="text-center">
+    <a href="" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalLRForm">Login OR Register</a>
+  </div>
+</div>
+</div>
+
+
+</section>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="register.js"></script>
+</html>
